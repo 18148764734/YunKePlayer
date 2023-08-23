@@ -1,6 +1,6 @@
 {
-  "name": "niplayer",
-  "version": "1.4.6",
+  "name": "runkeplayer",
+  "version": "1.4.7",
   "description": "This is a TS library for video player",
   "main": "./dist/player.esm.js",
   "module": "./dist/player.esm.js",
@@ -10,7 +10,7 @@
     "build": "rimraf dist && rollup -c config/rollup.config.prod.js && npm run build:dts",
     "build:tsc": "tsc",
     "build:dts": "dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts --project tsconfig.json  --no-check",
-    "publish: niplayer": "node ./script/publish.mjs",
+    "publish: runkeplayer": "node ./script/publish.mjs",
     "deploy": "node ./script/deploy.mjs",
     "test": "vitest",
     "coverage": "vitest run --coverage",
@@ -23,11 +23,11 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/NiMediaOrg/NiPlayer/issues"
+    "url": "https://github.com/18148764734/YunKePlayer/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/NiMediaOrg/NiPlayer"
+    "url": "git+https://github.com/18148764734/YunKePlayer.git"
   },
   "keywords": [
     "player",
@@ -95,5 +95,9 @@
     "mp4box": "^0.5.2",
     "ntouch.js": "^1.1.0",
     "socket.io-client": "4.6.0"
+  },
+  "homepage": "https://github.com/18148764734/YunKePlayer#readme",
+  "directories": {
+    "test": "test"
   }
 }

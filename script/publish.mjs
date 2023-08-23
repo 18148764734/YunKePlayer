@@ -21,7 +21,7 @@ const publish = () => {
         }
         const writeData = JSON.stringify(pkg, null ,2);
         fs.writeFileSync(`${cwd}/packages/quark-react/package.json`, writeData);
-        console.warn("已同步最新 NiPlayer 版本");
+        console.warn("已同步最新 RunKePlayer 版本");
 
         const spinner = ora("loading ~~~~").start();
         try {

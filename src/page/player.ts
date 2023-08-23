@@ -132,7 +132,7 @@ class Player extends Component implements ComponentItem {
     initComponent(): void {
         this.loading = new TimeLoading(
             this,
-            '视频姬正在努力加载中(⑅˃◡˂⑅)',
+            '小韵科全力加载中(⑅˃◡˂⑅)',
             this.el
         )
         this.error = new ErrorLoading(this, '你的网络罢工啦Q_Q', this.el);

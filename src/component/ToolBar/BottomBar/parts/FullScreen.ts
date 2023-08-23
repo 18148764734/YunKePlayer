@@ -64,7 +64,7 @@ export class FullScreen extends Options {
 
     requestFullScreen(e?: Event | SingleTapEvent) {
         if (e instanceof Event) {
-            // 在此处做了一层类型守卫
+            // 在此处做了一层类型守卫，阻止事件冒泡
             e.stopPropagation()
         }
         if (!isFull(this.player.container)) {

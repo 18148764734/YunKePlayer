@@ -9,6 +9,7 @@ export const HIDEEN_COMPONENT_STORE = new Map<string, ComponentItem>()
 
 // 内置的原子组件
 export const BuiltInControllerComponent = [
+    
     'DurationShow',
     'FullPage',
     'FullScreen',
@@ -17,7 +18,7 @@ export const BuiltInControllerComponent = [
     'Playrate',
     'ScreenShot',
     'SubSetting',
-    'VideoShot',
+    // 'VideoShot',
     'Toast',
 ]
 

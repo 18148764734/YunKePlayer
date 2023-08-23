@@ -22,7 +22,7 @@ export class Controller extends Component implements ComponentItem {
     leftControllers: ComponentConstructor[] = [PlayButton, Volume, DutaionShow]
     rightController: ComponentConstructor[] = [
         SubSetting,
-        VideoShot,
+        // VideoShot,
         ScreenShot,
         PicInPic,
         FullPage,
