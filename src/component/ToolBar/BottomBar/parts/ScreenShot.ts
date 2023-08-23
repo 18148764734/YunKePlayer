@@ -84,15 +84,15 @@ export class ScreenShot extends Options {
 			}.png`
 		try {
 			canvas.toBlob((blob) => {
-				const url = URL.createObjectURL(blob)
-				const a = document.createElement('a')
-				a.href = url
-				a.download = fileName
-				a.style.display = 'none'
-				document.body.appendChild(a)
-				a.click()
-				document.body.removeChild(a)
-				URL.revokeObjectURL(url)
+				const url = URL.createObjectURL(blob);
+				const a = document.createElement('a');
+				a.href = url;
+				a.download = fileName;
+				a.style.display = 'none';
+				document.body.appendChild(a);
+				a.click();
+				document.body.removeChild(a);
+				URL.revokeObjectURL(url);
 			}, 'image/png')
 		} catch {
 			// ToDo
