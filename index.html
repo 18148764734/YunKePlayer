@@ -36,7 +36,7 @@
 	<script>
 		window.onload = function () {
 			let player = new Player.default({
-				url: 'https://novaex.cc/fireworks.mp4',
+				url: 'http://106.53.107.158:8888/down/d2lxPuohkW1t.mp4',
 				container: document.getElementById('video'),
 				streamPlay: true,
 				thumbnails: {
@@ -47,10 +47,17 @@
 					source: 'https://novaex.cc/sprites.png',
 					interval: 6,
 				},
+				danmaku: {
+					//弹幕
+					open: true,
+					api: 'https://bilibili-service.vercel.app/api/danmaku',
+					type: 'http',
+					timeout: 5000,
+				},
 				title: 'hi！你好！我叫佐伊，你叫什么？',
 			})
 		}
-		
+
 	</script>
 </body>
 
