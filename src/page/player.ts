@@ -66,7 +66,7 @@ class Player extends Component implements ComponentItem {
 
 	// 暂停图标
 	pauseIcon: HTMLElement;
-	// 视频的长宽比例 默认为16： 9
+	// 视频的长宽比例 默认为16： 9,为电脑比例
 	private mediaProportion: number = 9 / 16;
 	static player = this;
 	constructor(options?: PlayerOptions) {
