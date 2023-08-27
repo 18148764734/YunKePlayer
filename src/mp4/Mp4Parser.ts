@@ -33,7 +33,7 @@ export class Mp4Parser {
                 width: info.tracks[0].track_width,
                 height: info.tracks[0].track_height,
             }
-
+            //获取视频信息
             this.player.setVideoInfo(videoInfo)
             this.player.emit(EVENT.MOOV_PARSE_READY)
         }
