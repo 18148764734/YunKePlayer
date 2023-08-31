@@ -3,6 +3,7 @@ import MP4Box, { MP4ArrayBuffer, MP4File } from 'mp4box'
 import { Video } from '..'
 import { DownLoader } from './net/DownLoader'
 import { EVENT } from '@/events'
+// 解析mp4的meta元数据
 export class Mp4Parser {
     url: string
     player: Player
