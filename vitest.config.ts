@@ -1,5 +1,5 @@
 import { defineConfig,configDefaults } from "vitest/config";
-
+// vite接入
 export default defineConfig({
   test: {
     exclude:[...configDefaults.exclude, "packages/template/*"],
