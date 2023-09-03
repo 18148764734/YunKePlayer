@@ -1,4 +1,5 @@
 /**
+ * 用于打乱弹幕轨道排序
  * @description 实现经典的洗牌算法打乱数组
  * @param {any[]} arr
  */
