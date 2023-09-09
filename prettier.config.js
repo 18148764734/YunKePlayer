@@ -1,4 +1,4 @@
-//TODO prettier代码的配置文件
+//引入prettier增强代码规范
 module.exports = {
     trailingComma: "es5",
     tabWidth: 4,
