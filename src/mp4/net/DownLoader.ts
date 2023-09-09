@@ -2,6 +2,7 @@ import { Log } from 'mp4box'
 import { RequestHeader } from '@/types/mp4'
 import HTTPRequest from './HTTPRequest'
 import { XHRLoader } from './XHRLoader'
+// 这是用来下载视频切片的类，里面封装了各种方法
 class DownLoader {
 	isActive: boolean = false
 	realtime: boolean = false

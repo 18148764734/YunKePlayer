@@ -1,5 +1,5 @@
 import { XHRConfig } from '@/types/mp4'
-
+// XHRLOADER网络请求工具
 export class XHRLoader {
     constructor() {}
 
