@@ -1,4 +1,4 @@
-// 开发环境
+// 开发环境配置
 import ts from 'rollup-plugin-typescript2'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
