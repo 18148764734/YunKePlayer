@@ -62,7 +62,7 @@ export type RequestMethod =
     | 'delete'
     | 'patch'
     | 'option'
-
+/**xhr配置：http请求参数，成功回调函数 */
 export type XHRConfig = {
     request: HTTPRequest
     success?: Function/** 这个是请求URL成功后执行的回调函数，里面含有请求成功后的数据 */

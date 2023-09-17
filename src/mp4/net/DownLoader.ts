@@ -79,7 +79,7 @@ class DownLoader {
 		this.chunkTimeout = _timeout
 		return this
 	}
-
+	/**设置请求成功拿到数据时的回调函数 */
 	setCallback(_callback: Function) {
 		this.callback = _callback
 		return this
