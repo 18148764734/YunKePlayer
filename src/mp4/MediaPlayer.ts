@@ -68,15 +68,18 @@ class MediaPlayer {
 			})
 			ctx.onUpdateEnd.call(sb, true, false, ctx)
 		}
-
+		/**订阅重定向寻道事件 */
 		this.player.on('seeking', (e: Event) => {
 			var i, start, end
 			var seek_info
 			var video = this.player.video
 			if (this.lastSeekTime !== video.currentTime) {
 				for (i = 0; i < video.buffered.length; i++) {
+					//根据下标找到切片的开始时间和结束时间
 					start = video.buffered.start(i)
 					end = video.buffered.end(i)
+
+					// 如果是在允许范围内的话，就return了，此时的start和end都是属于当前下标
 					if (
 						video.currentTime >= start &&
 						video.currentTime <= end
@@ -84,15 +87,15 @@ class MediaPlayer {
 						return
 					}
 				}
-				this.downloader.stop()
-				seek_info = this.mp4boxfile.seek(video.currentTime, true)
-				this.downloader.setChunkStart(seek_info.offset)
-				this.downloader.resume()
-				this.lastSeekTime = video.currentTime
+				this.downloader.stop()//停止下载
+				seek_info = this.mp4boxfile.seek(video.currentTime, true)//开始寻道
+				this.downloader.setChunkStart(seek_info.offset)//设置开始时间
+				this.downloader.resume()//重新开始寻道
+				this.lastSeekTime = video.currentTime//最后切片时间等于当前时间
 			}
 		})
 	}
-
+	/**这是视频开始时的方法，里面很多东西都是写死的 */
 	start() {
 		this.downloader.setChunkStart(this.mp4boxfile.seek(0, true).offset)
 		this.downloader.setChunkSize(1000000)
@@ -108,10 +111,7 @@ class MediaPlayer {
 			this.downloader.stop()
 		}
 	}
-	/**
-	 * @description 根据传入的媒体轨道的类型构建对应的SourceBuffer, 编码方式和对应的解码规范是一一对应的，尽管可能不是使用相同的字符串来表示它们
-	 * @param mp4track
-	 */
+	/**根据传入的媒体轨道的类型构建对应的SourceBuffer, 编码方式和对应的解码规范是一一对应的，尽管可能不是使用相同的字符串来表示它们 */
 	addBuffer(mp4track: MediaTrack) {
 		var track_id = mp4track.id
 		var codec = mp4track.codec
@@ -191,7 +191,7 @@ class MediaPlayer {
 			this.initializeSourceBuffers()
 		}
 	}
-
+	/**初始化 */
 	initializeSourceBuffers() {
 		var initSegs = this.mp4boxfile.initializeSegmentation()
 		for (var i = 0; i < initSegs.length; i++) {
@@ -210,7 +210,7 @@ class MediaPlayer {
 			sb.ms.pendingInits++
 		}
 	}
-
+	/**初始化追加事件 */
 	onInitAppended(e: Event) {
 		let ctx = this
 		var sb = e.target as MP4SourceBuffer
@@ -229,7 +229,7 @@ class MediaPlayer {
 			}
 		}
 	}
-
+	/**追加事件完成 */
 	onUpdateEnd(isNotInit: boolean, isEndOfAppend: boolean, ctx: MediaPlayer) {
 		if (isEndOfAppend === true) {
 			if ((this as unknown as MP4SourceBuffer).sampleNum) {
