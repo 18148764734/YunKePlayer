@@ -52,7 +52,7 @@ export class Mp4Parser {
      */
     loadFile() {
         let ctx = this
-        // 先写死，之后在修改
+        // 先写死，之后在修改，每隔一秒下载一次切片
         this.downloader.setInterval(500)
         this.downloader.setChunkSize(1000000)
         this.downloader.setUrl(this.url)
