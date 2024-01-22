@@ -1,6 +1,6 @@
 {
   "name": "runkeplayer",
-  "version": "1.4.7",
+  "version": "1.4.9",
   "description": "This is a TS library for video player",
   "main": "./dist/player.esm.js",
   "module": "./dist/player.esm.js",
