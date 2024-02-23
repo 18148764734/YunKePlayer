@@ -1,7 +1,7 @@
 export type EventObject = {
     [props: string]: Function[]
 }
-//发布订阅模式
+//发布订阅模式（事件总线）
 export class BaseEvent {
     $events: EventObject = {}
     constructor() {}
